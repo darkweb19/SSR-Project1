@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Registration Page</title>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		/>
+
+		<style>
+			.custom-container {
+				height: 50%;
+				width: 50%;
+				font-size: 12px;
+				margin: 2rem auto;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+					rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+					rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="custom-container">
+			<h3 class="text-center">Registration Form</h3>
+			<form action="/register" method="post">
+				<div class="form-group">
+					<label for="username ">Username</label>
+					<input
+						type="text"
+						class="form-control"
+						id="username"
+						name="name"
+						placeholder="Enter username"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input
+						type="email"
+						name="email"
+						class="form-control"
+						id="email"
+						placeholder="Enter email"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input
+						type="password"
+						class="form-control"
+						id="password"
+						name="password"
+						placeholder="Password"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="confirmPassword">Confirm Password</label>
+					<input
+						type="password"
+						class="form-control"
+						name="conPassword"
+						id="confirmPassword"
+						placeholder="Confirm Password"
+					/>
+				</div>
+				<button type="submit" class="btn btn-primary">Register</button>
+			</form>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Create Blog page</title>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		/>
+		<style>
+			.container {
+				height: 100%;
+				width: 50%;
+				font-size: 13px;
+				margin: 2rem auto;
+
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+					rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+					rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<% include("../partials/navbar") %>
+			<h1 class="text-center">Create Blog Form</h1>
+			<form method="post" action="/blog">
+				<div class="form-group">
+					<label for="firstName">Title</label>
+					<input
+						type="text"
+						class="form-control"
+						id="firstName"
+						placeholder="Enter title"
+						name="title"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="lastName">Slug</label>
+					<input
+						type="text"
+						class="form-control"
+						id="lastName"
+						placeholder="Enter slug"
+						name="slug"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="description">Description</label>
+					<textarea
+						class="form-control"
+						id="description"
+						rows="3"
+						name="description"
+						placeholder="Enter a description"
+					></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="gender">Category</label>
+					<select class="form-control" name="category" id="gender">
+						<option value="">-- Select category</option>
+						<% for(const category of categories) { %>
+						<option value="<%=category._id  %>">
+							<%= category.name %>
+						</option>
+						<% } %>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="gender">Author</label>
+					<select class="form-control" name="author" id="gender">
+						<option value="">-- Select author</option>
+						<% for(const user of users) { %>
+						<option value="<%= user._id  %>">
+							<%= user.name %>
+						</option>
+						<% } %>
+					</select>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
